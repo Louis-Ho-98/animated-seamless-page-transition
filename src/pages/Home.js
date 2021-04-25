@@ -33,9 +33,6 @@ export default function Home({ pathname }) {
     duration: 0.8,
   };
 
-  console.log("context", pageVariantsContext);
-  console.log("mount Home", pageVariants);
-
   return (
     <motion.div
       className="App"
