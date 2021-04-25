@@ -5,6 +5,7 @@ import { PageVariantsContext } from "../App";
 import Dragable from "../components/Dragable";
 import { motion } from "framer-motion";
 
+//build your customized component
 const InnerComponent = () => {
   return <p1>Drag Down</p1>;
 };

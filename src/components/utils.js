@@ -1,4 +1,5 @@
 const pageVariantsContextsMaker = (currentPage, directTo, position) => {
+  // animation for bring a new page either from the top (postion==="top") or from the bottom (postion==="bottom")
   if (position === "top") {
     return {
       [currentPage]: {
