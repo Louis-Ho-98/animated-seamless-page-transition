@@ -36,7 +36,7 @@ export default function Home({ pathname }) {
 
   return (
     <motion.div
-      className="App"
+      className="bg-yellow-300 h-screen w-screen"
       initial="initial"
       animate="in"
       exit="out"
@@ -45,7 +45,7 @@ export default function Home({ pathname }) {
       style={{ position: "absolute" }}
     >
       <Dragable
-        backgroundColor="bg-gray-300"
+        backgroundColor="bg-red-300"
         position="top"
         dragDirection="y"
         dragPixelToTrigger={5}
@@ -56,10 +56,8 @@ export default function Home({ pathname }) {
         updatePageVariantsConetxt={updatePageVariantsConetxt}
         InnerComponent={InnerComponent}
       />
-      <div className="w-screen">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-        </header>
+      <div className="h-50 w-100 absolute bottom-20">
+        <text className="color-blue text-6xl text-center">Home</text>
       </div>
     </motion.div>
   );

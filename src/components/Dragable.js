@@ -45,7 +45,7 @@ const Dragable = ({
         drag={dragDirection}
         dragConstraints={constraintsRef}
         style={{ x }}
-        dragElastic={0.2}
+        dragElastic={0.05}
         onDragStart={(event, info) => {
           setStartPoint(info.point[dragDirection]);
         }}
