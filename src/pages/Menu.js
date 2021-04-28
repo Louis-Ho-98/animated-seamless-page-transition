@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from "react";
 import "../App.css";
 import { motion } from "framer-motion";
-import Dragable from "../components/Dragable";
+import Dragable from "../components/Dragable/Dragable";
 import { PageVariantsContext } from "../App";
 
 //build your customized component

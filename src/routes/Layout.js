@@ -1,6 +1,7 @@
 import { Route, Switch } from "react-router";
 import Home from "../pages/Home";
 import Menu from "../pages/Menu";
+import Detail from "../pages/Detail";
 import { AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
 
@@ -16,6 +17,9 @@ const Layout = () => {
 
           <Route path="/menu">
             <Menu pathname={location.pathname} />
+          </Route>
+          <Route path="/detail">
+            <Detail />
           </Route>
         </Switch>
       </AnimatePresence>

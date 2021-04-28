@@ -19,7 +19,7 @@ const Dragable = ({
   const [startPoint, setStartPoint] = useState(false);
 
   const constraintsRef = useRef(null);
-  const x = useMotionValue(0);
+  // const x = useMotionValue(0);
   const history = useHistory();
 
   const isToRedirect = (endPoint) => {
@@ -30,21 +30,31 @@ const Dragable = ({
     );
     updatePageVariantsConetxt(newPageVariantsContext);
 
-    if (Math.abs(startPoint - endPoint) >= dragPixelToTrigger) {
-      history.push(directTo);
+    if (position === "bottom") {
+      if (endPoint - startPoint <= -5) {
+        history.push(directTo);
+      }
+    } else if (position === "top") {
+      if (endPoint - startPoint >= 5) {
+        history.push(directTo);
+      }
     }
+
+    // if (Math.abs(startPoint - endPoint) >= dragPixelToTrigger) {
+    //   history.push(directTo);
+    // }
   };
 
   return (
     <motion.div
       ref={constraintsRef}
-      class={`"h-${height} absolute ${position}-0 w-${width}"`}
+      className={`h-${height} absolute ${position}-0 w-${width}`}
     >
       <motion.div
-        class={`h-${height} w-${width} ${backgroundColor}`}
+        className={`h-${height} w-${width} ${backgroundColor}`}
         drag={dragDirection}
         dragConstraints={constraintsRef}
-        style={{ x }}
+        // style={{ x }}
         dragElastic={0.05}
         onDragStart={(event, info) => {
           setStartPoint(info.point[dragDirection]);
