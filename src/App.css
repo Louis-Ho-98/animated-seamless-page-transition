@@ -41,3 +41,12 @@
   @apply py-2 px-4 font-semibold rounded-lg shadow-md;
   
 }
+
+.page-base {
+  background-color: #f3f3f3;
+  padding-left: 20;
+  padding-right: 20;
+  padding-top: 23;
+  padding-bottom: 29;
+  height:100vh;
+}
