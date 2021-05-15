@@ -13,7 +13,6 @@ export default function Menu({ pathname }) {
   const { pageVariantsContext, updatePageVariantsConetxt } = useContext(
     PageVariantsContext
   );
-
   const [pageVariants, setPageVariants] = useState(
     pageVariantsContext[pathname]
       ? pageVariantsContext[pathname]
@@ -23,6 +22,7 @@ export default function Menu({ pathname }) {
           out: { y: 0 },
         }
   );
+  //listen on pageVariantsContext
   useEffect(() => {
     setPageVariants(pageVariantsContext[pathname]);
   }, [pageVariantsContext]);

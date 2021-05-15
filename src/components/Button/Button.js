@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-// 按钮基础组件
+
 const Button = (props) => {
   const {
     size,
@@ -52,7 +52,7 @@ const Button = (props) => {
     ? `flex items-center justify-center`
     : `flex items-center justify-between`;
   let btnStyles = `inline-flex ${textStyle} ${sizeStyle} ${borderStyle} ${alignStyle}`;
-  let iconStyle = "w-6 h-6 mr-2 inline-block"; // 按钮图标样式
+  let iconStyle = "w-6 h-6 mr-2 inline-block"; // style of icon inside
 
   if (disabled) {
     btnStyles += ` bg-grey-300`;
@@ -67,11 +67,11 @@ const Button = (props) => {
       {isWithValue && <span className="ml-4">{value}</span>}
     </button>
   );
-};
+};;;
 
 export default Button;
 
-// 组件属性检查
+// button props check
 Button.propTypes = {
   children: PropTypes.node,
   size: PropTypes.oneOfType([

@@ -9,13 +9,13 @@ export default function SlideUpToGrow({ triggerAnimation }) {
 
   const isToAnimate = (endPoint) => {
     if (endPoint - startPoint >= 5) {
-      //如果已经在底部，向下滑无效
+      //if postioned on bottom, slide down is not allowed
       if (startAnimation) {
         triggerAnimation();
         setStartAnimation(false);
       }
     } else if (endPoint - startPoint <= -5) {
-      //如果已经在顶部，向上滑无效
+      //if positioned on top, slide up is not allowed
       if (!startAnimation) {
         triggerAnimation();
         setStartAnimation(true);
@@ -49,57 +49,3 @@ export default function SlideUpToGrow({ triggerAnimation }) {
     </motion.div>
   );
 }
-
-// const Dragable = ({
-//   backgroundColor,
-//   position,
-//   dragDirection,
-//   dragPixelToTrigger,
-
-//   height,
-//   width,
-
-// }) => {
-//   const [startPoint, setStartPoint] = useState(false);
-
-//   const constraintsRef = useRef(null);
-//   const x = useMotionValue(0);
-
-//   const isToRedirect = (endPoint) => {
-//     const newPageVariantsContext = pageVariantsContextsMaker(
-//       currentPage,
-//       directTo,
-//       position
-//     );
-//     updatePageVariantsConetxt(newPageVariantsContext);
-
-//     if (Math.abs(startPoint - endPoint) >= dragPixelToTrigger) {
-//       history.push(directTo);
-//     }
-//   };
-
-//   return (
-//     <motion.div
-//       ref={constraintsRef}
-//       class={`h-${height} absolute ${position}-0 w-${width}`}
-//     >
-//       <motion.div
-//         class={`h-${height} w-${width} ${backgroundColor}`}
-//         drag={dragDirection}
-//         dragConstraints={constraintsRef}
-//         style={{ x }}
-//         dragElastic={0.05}
-//         onDragStart={(event, info) => {
-//           setStartPoint(info.point[dragDirection]);
-//         }}
-//         onDragEnd={(event, info) => {
-//           isToRedirect(info.point[dragDirection]);
-//         }}
-//       >
-
-//       </motion.div>
-//     </motion.div>
-//   );
-// };
-
-// export default Dragable;

@@ -4,7 +4,6 @@ import SlideUpToGrow from "../components/SlideUpToGrow.js/SlideUpToGrow";
 
 export default function Detail() {
   const [isAnimaTriggered, setIsAnimaTriggered] = useState(false);
-  console.log("parent triggered", isAnimaTriggered);
   const triggerAnimation = () => {
     setIsAnimaTriggered(!isAnimaTriggered);
   };

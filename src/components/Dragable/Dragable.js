@@ -23,19 +23,21 @@ const Dragable = ({
   const history = useHistory();
 
   const isToRedirect = (endPoint) => {
+    //根据通过组件所在页面位置、 当前页面，以及前往页面更新context参数
     const newPageVariantsContext = pageVariantsContextsMaker(
       currentPage,
       directTo,
       position
     );
     updatePageVariantsConetxt(newPageVariantsContext);
-
+    
+    //限定拖动组件只能往一个方向拖动。
     if (position === "bottom") {
-      if (endPoint - startPoint <= -5) {
+      if (endPoint - startPoint <= -dragPixelToTrigger) {
         history.push(directTo);
       }
     } else if (position === "top") {
-      if (endPoint - startPoint >= 5) {
+      if (endPoint - startPoint >= dragPixelToTrigger) {
         history.push(directTo);
       }
     }

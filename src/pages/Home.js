@@ -11,6 +11,8 @@ const InnerComponent = () => {
 };
 
 export default function Home({ pathname }) {
+
+  console.log("home", pathname);
   const { pageVariantsContext, updatePageVariantsConetxt } = useContext(
     PageVariantsContext
   );
